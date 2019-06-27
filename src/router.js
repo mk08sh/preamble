@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Preamble from './components/Preamble'
+import Payment from '@/components/Payment'
+import Review from '@/components/Review'
+import Confirmation from '@/components/Confirmation'
+import Registration from '@/components/Registration'
 
 Vue.use(Router)
 
@@ -8,16 +12,28 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
+      name: 'preamble',
+      component: Preamble
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    }
+      path: '/payment',
+      name: 'payment',
+      component: Payment
+    },
+    {
+      path: '/review',
+      name: 'review',
+      component: Review
+    },
+    {
+      path: '/confirmation',
+      name: 'confirmation',
+      component: Confirmation
+    },
+    {
+      path: '/registration',
+      name: 'registration',
+      component: Registration
+    },
   ]
 })
